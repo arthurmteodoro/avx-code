@@ -2,6 +2,9 @@
  * Escreva um programa que calcule a soma de dois vetores A e B do tipo double. Os vetores A e B
  * devem ser lidos da memória usando a instrução _mm256_load_pd. O resultado da operação
  * deve ser armazenado na memória usando a instrução _mm256_store_pd.
+ * 
+ * Como compilar: gcc -mavx -o ex2.o ex02.c
+ * É necessário que o processador suporte AVX
 */
 
 #include <immintrin.h>

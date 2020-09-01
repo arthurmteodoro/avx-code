@@ -4,7 +4,7 @@
  * ser selecionada de acordo com o tipo de dados dos vetores double (4 x 64bits), float (8 x 32bits) ou
  * integer (8 x 32 bits). Apresente o resultado convenientemente na tela.
  * 
- * Como comṕilar: gcc -mfma -o ex1.o ex01.c
+ * Como compilar: gcc -mfma -o ex1.o ex01.c
  * É necessário que o processador suporte AVX2
 */
 
