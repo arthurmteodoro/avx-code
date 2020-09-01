@@ -1,11 +1,9 @@
 /**
- * Escreva um programa que suporte a entrada de três vetores A, B e C e realize a multiplicação e
- * soma de seus elementos usando a instrução SIMD do AVX (_mm256_fmadd_). A entrada deve
- * ser selecionada de acordo com o tipo de dados dos vetores double (4 x 64bits), float (8 x 32bits) ou
- * integer (8 x 32 bits). Apresente o resultado convenientemente na tela.
- * 
- * Como compilar: gcc -mfma -o ex1.o ex01.c
- * É necessário que o processador suporte AVX2
+ A função intrínseca _shuffle_ seleciona elementos de entrada para um ou dois 
+ vetores de 256 bitse os colocam no vetor de saída de acordo com um terceiro 
+ elemento de 8 bits, que determinaquais elementos devem ser colocados no vetor de saída.  Encontre o valor do terceiro elementoe implemente um programa que 
+ realize o embaralhamento mostrado na figura abaixo, usando ainstrução 
+ _mm256_shuffle_ps (vec1, vec2, 0bxxxxxxxx).
 */
 
 #include <immintrin.h>
@@ -30,6 +28,18 @@ int main() {
         printf("%0.2f ", vec2[i]);
     }
     printf("\n");
+
+    /* Dado um inteiro para o controle do shuffle, cujo binário é composto pela concatenação dos pares de bits w, x, y e z, tem-se que cada par de bits representa as seguintes atribuições para as posições no vetor resultado:
+    w: a posição 3 do novo vetor recebe o valor de vec2[int(w)]
+       a posição 7 do novo vetor recebe o valor de vec2[int(w)+4]
+    x: a posição 2 do novo vetor recebe o valor de vec2[int(w)]
+       a posição 6 do novo vetor recebe o valor de vec2[int(w)+4]
+    y: a posição 1 do novo vetor recebe o valor de vec1[int(w)]
+       a posição 5 do novo vetor recebe o valor de vec1[int(w)+4]
+    z: a posição 0 do novo vetor recebe o valor de vec1[int(w)]
+       a posição 4 do novo vetor recebe o valor de vec1[int(w)+4]
+
+    */
 
     // Imprime o valor utilizado para o shuffle
     printf("Valor utilizado para o shuffle:\n");
