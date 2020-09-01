@@ -12,26 +12,35 @@
 #include <stdio.h>
 
 int main() {
+    // Cria o primeiro vetor
     __m256 vec1 = _mm256_setr_ps(0.0, 2.0, 4.0, 6.0, 8.0, 10.0, 12.0, 14.0);
-    // __m256 vec1 = _mm256_setr_ps(1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0);
+    // Cria o segundo vetor
     __m256 vec2 = _mm256_setr_ps(1.0, 3.0, 5.0, 7.0, 9.0, 11.0, 13.0, 15.0);
-    // __m256 vec2 = _mm256_setr_ps(9.0, 10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0);
 
-    printf("VEC1: ");
+    // Imprime o primeiro vetor
+    printf("VEC1:");
     for(int i = 0; i < 8; i++) {
         printf("%f ", vec1[i]);
     }
     printf("\n");
 
-    printf("VEC2: ");
+    // Imprime o segundo vetor
+    printf("VEC2:");
     for(int i = 0; i < 8; i++) {
         printf("%f ", vec2[i]);
     }
     printf("\n");
 
-    __m256 vec3 = _mm256_shuffle_ps(vec1, vec2, 0x29);
+    // Imprime o valor utilizado para o shuffle
+    printf("Decimal utilizado para o shuffle: %d\n\n", 0b01110100);
 
-    printf("SHUFFLE: ");
+    // Aplica o shuffle nos vetores 1 e 2 com o decimal 116 e armazena no 
+    // terceiro vetor
+    __m256 vec3 = _mm256_shuffle_ps(vec1, vec2, 0b01110100);
+
+
+    // Imprime o resultado do shuffle
+    printf("SHUFFLE:");
     for(int i = 0; i < 8; i++) {
         printf("%f ", vec3[i]);
     }
