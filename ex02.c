@@ -5,6 +5,8 @@
  * 
  * Como compilar: gcc -mavx -o ex2.o ex02.c
  * É necessário que o processador suporte AVX
+ * Alunos: Arthur Alexsander Martins Teodoro
+ *         Arthur Henrique Sousa Cruz
 */
 
 #include <immintrin.h>

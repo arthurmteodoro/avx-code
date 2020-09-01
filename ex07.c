@@ -1,9 +1,13 @@
 /**
- A função intrínseca _shuffle_ seleciona elementos de entrada para um ou dois 
- vetores de 256 bitse os colocam no vetor de saída de acordo com um terceiro 
- elemento de 8 bits, que determinaquais elementos devem ser colocados no vetor de saída.  Encontre o valor do terceiro elementoe implemente um programa que 
- realize o embaralhamento mostrado na figura abaixo, usando ainstrução 
- _mm256_shuffle_ps (vec1, vec2, 0bxxxxxxxx).
+ * A função intrínseca _shuffle_ seleciona elementos de entrada para um ou dois 
+ * vetores de 256 bitse os colocam no vetor de saída de acordo com um terceiro 
+ * elemento de 8 bits, que determinaquais elementos devem ser colocados no 
+ * vetor de saída.  Encontre o valor do terceiro elementoe implemente um 
+ * programa que realize o embaralhamento mostrado na figura abaixo, usando 
+ * ainstrução _mm256_shuffle_ps (vec1, vec2, 0bxxxxxxxx).
+ * 
+ * Alunos: Arthur Alexsander Martins Teodoro
+ *         Arthur Henrique Sousa Cruz
 */
 
 #include <immintrin.h>

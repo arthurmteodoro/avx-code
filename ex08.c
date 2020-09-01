@@ -1,17 +1,12 @@
 /*
-    Dado o exemplo de código para multiplicação de elementos complexos na página 14 do tutorial [3],seção 7. Implemente um código em que as entradas 
-    são inseridas via terminal, realize a operaçãosolicitada e mostre o 
-    resultado na tela. Explique como são realizados os cálculos.
-*/
-
-/**
- * Escreva um programa que suporte a entrada de três vetores A, B e C e realize a multiplicação e
- * soma de seus elementos usando a instrução SIMD do AVX (_mm256_fmadd_). A entrada deve
- * ser selecionada de acordo com o tipo de dados dos vetores double (4 x 64bits), float (8 x 32bits) ou
- * integer (8 x 32 bits). Apresente o resultado convenientemente na tela.
+ * Dado o exemplo de código para multiplicação de elementos complexos na 
+ * página 14 do tutorial [3],seção 7. Implemente um código em que as entradas 
+ * são inseridas via terminal, realize a operaçãosolicitada e mostre o 
+ * resultado na tela. Explique como são realizados os cálculos.
+ * Alunos: Arthur Alexsander Martins Teodoro
+ *         Arthur Henrique Sousa Cruz
  * 
- * Como compilar: gcc -mfma -o ex1.o ex01.c
- * É necessário que o processador suporte AVX2
+ * Código baseado em: https://www.codeproject.com/Articles/874396/Crunching-Numbers-with-AVX-and-AVX
 */
 
 #include <immintrin.h>
@@ -109,7 +104,7 @@ int main() {
     // Após isso, permuta-se o vetor 2 de forma que ele fique no seguinte 
     // formato:
     // vetor_2 = d, -c, z, -y
-    vetor_2 = _mm256_permute_pd(vetor_2, 0x5);
+    vetor_2 = _mm256_permute_pd(vetor_2, 0b00000101);
 
     // Armazenamos em vetor 4 a multiplicação do vetor 1 pelo vetor 2 
     // modificado, fazendo com que tenhamos:
@@ -128,7 +123,7 @@ int main() {
     printf("Resultado eq 1: ");
     printf("%0.2f + (", vetor_resultado[0]);
     printf("%0.2f)i\n", vetor_resultado[1]);
-    printf("Resultado eq 2:");
+    printf("Resultado eq 2: ");
     printf("%0.2f + (", vetor_resultado[2]);
     printf("%0.2f)i\n", vetor_resultado[3]);
 

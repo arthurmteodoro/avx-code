@@ -5,6 +5,8 @@
  * 
  * Como compilar: gcc -mfma -o ex5.o ex05.c
  * É necessário que o processador suporte AVX2
+ * Alunos: Arthur Alexsander Martins Teodoro
+ *         Arthur Henrique Sousa Cruz
 */
 
 #include <immintrin.h>

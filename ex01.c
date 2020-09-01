@@ -6,6 +6,10 @@
  * 
  * Como compilar: gcc -mfma -o ex1.o ex01.c
  * É necessário que o processador suporte AVX2
+ * 
+ * 
+ * Alunos: Arthur Alexsander Martins Teodoro
+ *         Arthur Henrique Sousa Cruz
 */
 
 #include <immintrin.h>

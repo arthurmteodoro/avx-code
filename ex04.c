@@ -4,6 +4,9 @@
  * 
  * Como compilar: gcc -mavx -o ex4.o ex04.c
  * É necessário que o processador suporte AVX
+ * 
+ * Alunos: Arthur Alexsander Martins Teodoro
+ *         Arthur Henrique Sousa Cruz
 */
 
 #include <immintrin.h>

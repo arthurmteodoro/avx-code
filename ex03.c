@@ -4,6 +4,9 @@
  * resultado requer mais memória do que o o vetor pode armazenar. Crie um programa que exem-
  * plifique esta situação ao somarmos dois vetores A e B, no qual seus elementos são definidos como
  * _mm256_add_epi8 e _mm256_subs_epi16. Apresente o resultado convenientemente na tela.
+ * 
+ * Alunos: Arthur Alexsander Martins Teodoro
+ *         Arthur Henrique Sousa Cruz
 */
 
 #include <immintrin.h>
