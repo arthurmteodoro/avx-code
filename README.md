@@ -4,7 +4,7 @@ Este projeto consiste na implementação de exemplos de código que utilizam o A
 
 ## Requisitos
 
-É necessário ter instalado o compilador *gcc* e que o sistema operacional tenha suporte ao AVX e ao AVX2.
+É necessário que o sistema operacional tenha suporte ao AVX e ao AVX2 e que se tenha instalado o compilador *gcc*.
 
 ## Compilação e execução
 
