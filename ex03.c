@@ -11,14 +11,43 @@
 
 int main() {
 
+    int i;
+
+    // Inicializa os vetores com inteiros sinalizados de 16 bits
     __m256i a = _mm256_set1_epi16(32760);
-    __m256i b = _mm256_set1_epi16(32768);
+    __m256i b = _mm256_set1_epi16(10);
 
-    __m256i c = _mm256_subs_epi16(a, b);
+    // realiza a soma dos inteiros com saturacao e sem saturacao
+    __m256i c = _mm256_add_epi16(a, b);
+    __m256i d = _mm256_adds_epi16(a, b);
 
-    short* res = (short*)&c;
-    printf("\nResultado de A*B + C: \n");
-    printf("%hi %hi %hi %hi %hi %hi %hi %hi\n", res[0], res[1], res[2], res[3], res[4], res[5], res[6], res[7]);
+    // converte os veetores para vetores de short
+    short* vet1 = (short*)&a;
+    short* vet2 = (short*)&b;
+
+    short* res_add = (short*)&c;
+    short* res_add_saturado = (short*)&d;
+
+    // imprime os resultados na tela
+    printf("Vetor 1: \n");
+    for(i = 0; i < 16; i++)
+        printf("%hi ", vet1[i]);
+    printf("\n");
+
+    printf("\nVetor 2: \n");
+    for(i = 0; i < 16; i++)
+        printf("%hi ", vet2[i]);
+    printf("\n");
+
+    printf("\nSoma dos vetores sem saturacao: \n");
+    for(i = 0; i < 16; i++)
+        printf("%hi ", res_add[i]);
+    printf("\n");
+
+    printf("\nSoma dos vetores com saturacao: \n");
+    for(i = 0; i < 16; i++)
+        printf("%hi ", res_add_saturado[i]);
+    printf("\n");
 
     return 0;
 }
