@@ -20,19 +20,22 @@ int main() {
     // Imprime o primeiro vetor
     printf("VEC1:");
     for(int i = 0; i < 8; i++) {
-        printf("%f ", vec1[i]);
+        printf("%0.2f ", vec1[i]);
     }
     printf("\n");
 
     // Imprime o segundo vetor
     printf("VEC2:");
     for(int i = 0; i < 8; i++) {
-        printf("%f ", vec2[i]);
+        printf("%0.2f ", vec2[i]);
     }
     printf("\n");
 
     // Imprime o valor utilizado para o shuffle
-    printf("Decimal utilizado para o shuffle: %d\n\n", 0b01110100);
+    printf("Valor utilizado para o shuffle:\n");
+    printf("Em binário: 01110100\n");
+    printf("Em hexadecimal: 74\n");
+    printf("Em decimal: %d\n\n", 0b01110100);
 
     // Aplica o shuffle nos vetores 1 e 2 com o decimal 116 e armazena no 
     // terceiro vetor
@@ -42,7 +45,7 @@ int main() {
     // Imprime o resultado do shuffle
     printf("SHUFFLE:");
     for(int i = 0; i < 8; i++) {
-        printf("%f ", vec3[i]);
+        printf("%0.2f ", vec3[i]);
     }
     printf("\n");
 
